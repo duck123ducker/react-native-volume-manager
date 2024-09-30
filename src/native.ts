@@ -206,6 +206,20 @@ export async function getVolume(): Promise<VolumeResult> {
 }
 
 /**
+ * Activate keyListener.
+ */
+export async function activateKeyListener(): Promise<string> {
+  return await VolumeManagerNativeModule.activateKeyListener();
+}
+
+/**
+ * Inactivate keyListener.
+ */
+export async function inactivateKeyListener(): Promise<string> {
+  return await VolumeManagerNativeModule.inactivateKeyListener();
+}
+
+/**
  * Set the current device volume.
  * @param {number} value - The volume value to set. Must be between 0 and 1.
  * @param {VolumeManagerSetVolumeConfig} [config={}] - Additional configuration for setting the volume.
@@ -323,6 +337,8 @@ export const VolumeManager = {
   addVolumeListener,
   getVolume,
   setVolume,
+  activateKeyListener,
+  inactivateKeyListener,
   showNativeVolumeUI,
   isRingerListenerEnabled,
   addSilentListener,

@@ -86,6 +86,7 @@ export interface VolumeManagerSetVolumeConfig {
  * Represents the volume result.
  * @export
  * @interface VolumeResult
+ * @property {string} press - The volume level. Both for iOS and Android. Defaults to music.
  * @property {number} volume - The volume level. Both for iOS and Android. Defaults to music.
  * @property {number} alarm - The alarm volume. Android only.
  * @property {number} call - The call volume. Android only.
@@ -95,6 +96,7 @@ export interface VolumeManagerSetVolumeConfig {
  * @property {number} system - The system volume. Android only.
  */
 export interface VolumeResult {
+  press: 'up' | 'down';
   // Both iOS and Android (defaults to type music for android)
   volume: number;
   // Android only
